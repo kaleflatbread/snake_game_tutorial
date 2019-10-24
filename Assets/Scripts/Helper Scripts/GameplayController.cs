@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
-
   public static GameplayController instance;
   public GameObject fruit_PickUp, bomb_PickUp;
   private float min_X = -4.25f, max_X = 4.25f, min_Y = -2.26f, max_Y = 2.26f;
@@ -13,7 +12,6 @@ public class GameplayController : MonoBehaviour
   private Text score_Text;
   private int scoreCount;
 
-    // Start is called before the first frame update
     void Awake()
     {
       MakeInstance();

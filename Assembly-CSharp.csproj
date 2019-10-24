@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Helper Scripts\GameplayController.cs" />
      <Compile Include="Assets\Scripts\Helper Scripts\Tags.cs" />
+     <Compile Include="Assets\Scripts\Pickup Scripts\DeactivatePickUp.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerInput.cs" />
      <None Include="Assets\Fonts\OpenSans\License!.txt" />

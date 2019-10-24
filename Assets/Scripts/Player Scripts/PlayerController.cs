@@ -176,7 +176,8 @@ public class PlayerController : MonoBehaviour
 
     if(target.tag == Tags.WALL || target.tag == Tags.BOMB || target.tag == Tags.TAIL)
     {
-      print("Touched tail");
+      // GameObject.FindWithTag("Player").SetActive(false);
+      Debug.Log(target.tag);
     }
   }
 }
