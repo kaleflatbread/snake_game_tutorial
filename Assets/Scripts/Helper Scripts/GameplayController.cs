@@ -60,6 +60,6 @@ public class GameplayController : MonoBehaviour
     }
 
     public void GameOver() {
-      score_Text.text = "GAME OVER";
+      score_Text.text = "Final score: " + scoreCount;
     }
 }

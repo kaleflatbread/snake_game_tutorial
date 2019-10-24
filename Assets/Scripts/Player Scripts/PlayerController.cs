@@ -82,22 +82,22 @@ public class PlayerController : MonoBehaviour
       {
         case PlayerDirection.RIGHT:
           nodes[1].position = nodes[0].position - new Vector3(Metrics.NODE, 0f, 0f);
-          nodes[2].position = nodes[0].position - new Vector3(Metrics.NODE * 1.5f, 0f, 0f);
+          nodes[2].position = nodes[0].position - new Vector3(Metrics.NODE * 2f, 0f, 0f);
           break;
 
         case PlayerDirection.LEFT:
           nodes[1].position = nodes[0].position + new Vector3(Metrics.NODE, 0f, 0f);
-          nodes[2].position = nodes[0].position + new Vector3(Metrics.NODE * 1.5f, 0f, 0f);
+          nodes[2].position = nodes[0].position + new Vector3(Metrics.NODE * 2f, 0f, 0f);
           break;
 
         case PlayerDirection.UP:
           nodes[1].position = nodes[0].position - new Vector3(0f, Metrics.NODE, 0f);
-          nodes[2].position = nodes[0].position - new Vector3(0f, Metrics.NODE * 1.5f, 0f);
+          nodes[2].position = nodes[0].position - new Vector3(0f, Metrics.NODE * 2f, 0f);
           break;
 
         case PlayerDirection.DOWN:
           nodes[1].position = nodes[0].position + new Vector3(0f, Metrics.NODE, 0f);
-          nodes[2].position = nodes[0].position + new Vector3(0f, Metrics.NODE * 1.5f, 0f);
+          nodes[2].position = nodes[0].position + new Vector3(0f, Metrics.NODE * 2f, 0f);
           break;
       }
     }
