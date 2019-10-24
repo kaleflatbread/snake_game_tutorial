@@ -82,22 +82,22 @@ public class PlayerController : MonoBehaviour
       {
         case PlayerDirection.RIGHT:
           nodes[1].position = nodes[0].position - new Vector3(Metrics.NODE, 0f, 0f);
-          nodes[2].position = nodes[0].position - new Vector3(Metrics.NODE * 2f, 0f, 0f);
+          nodes[2].position = nodes[0].position - new Vector3(Metrics.NODE * 1.2f, 0f, 0f);
           break;
 
         case PlayerDirection.LEFT:
           nodes[1].position = nodes[0].position + new Vector3(Metrics.NODE, 0f, 0f);
-          nodes[2].position = nodes[0].position + new Vector3(Metrics.NODE * 2f, 0f, 0f);
+          nodes[2].position = nodes[0].position + new Vector3(Metrics.NODE * 1.2f, 0f, 0f);
           break;
 
         case PlayerDirection.UP:
           nodes[1].position = nodes[0].position - new Vector3(0f, Metrics.NODE, 0f);
-          nodes[2].position = nodes[0].position - new Vector3(0f, Metrics.NODE * 2f, 0f);
+          nodes[2].position = nodes[0].position - new Vector3(0f, Metrics.NODE * 1.2f, 0f);
           break;
 
         case PlayerDirection.DOWN:
           nodes[1].position = nodes[0].position + new Vector3(0f, Metrics.NODE, 0f);
-          nodes[2].position = nodes[0].position + new Vector3(0f, Metrics.NODE * 2f, 0f);
+          nodes[2].position = nodes[0].position + new Vector3(0f, Metrics.NODE * 1.2f, 0f);
           break;
       }
     }
@@ -120,12 +120,16 @@ public class PlayerController : MonoBehaviour
       parentPos = prevPosition;
 
     }
-
     // check if we need to create a new node
     // because we ate a fruit
     if(create_Node_At_Tail)
     {
+      create_Node_At_Tail = false;
 
+      GameObject newNode = Instantiate(tailPrefab, nodes[nodes.Count - 1].position, Quaternion.identity);
+
+      newNode.transform.SetParent(transform, true);
+      nodes.Add(newNode.GetComponent<Rigidbody>());
     }
   }
 
@@ -158,5 +162,21 @@ public class PlayerController : MonoBehaviour
     counter = 0;
     move = false;
     Move();
+  }
+
+  void OnTriggerEnter(Collider target)
+  {
+    if(target.tag == Tags.FRUIT)
+    {
+      target.gameObject.SetActive(false);
+      create_Node_At_Tail = true;
+      GameplayController.instance.IncreaseScore();
+    }
+
+
+    if(target.tag == Tags.WALL || target.tag == Tags.BOMB || target.tag == Tags.TAIL)
+    {
+      print("Touched tail");
+    }
   }
 }
