@@ -93,7 +93,8 @@ MonoBehaviour:
   direction: 0
   step_length: 0.2
   movement_Frequency: 0.1
-  tailPrefab: {fileID: 0}
+  tailPrefab: {fileID: 1432426471341765481, guid: 434fd0aa7b59c4881b3844604067c6ff,
+    type: 3}
 --- !u!1 &5108906689025040587
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +291,7 @@ SphereCollider:
   m_GameObject: {fileID: 9149048397568657945}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.0000005
   m_Center: {x: 2.879912e-20, y: 0.0000005066396, z: -1.2079228e-13}
